@@ -31,7 +31,7 @@ function() {
            `NOTICE TO APPEAR (NTA)-PERSON DETAINED`,`VISA WAIVER PROGRAM (VWP)-REMOVAL-LIMITED REVIEW3`, 
            `VISA WAIVER PROGRAM (VWP)-REFUSAL LIMITED REVIEW3`, `STOWAWAY-LIMITED REVIEW3`, `Total Credible Fear Inadmissibles`, ID)
   
-  old_data <- read_csv(file = "OFO Dispositions.csv")
+  old_data <- read_csv(file = "OFO Dispositions.csv") # contains data from 2022 that is no longer online
   
   bind_rows(old_data,
             anti_join(data, old_data, by = "ID")) |>
@@ -68,7 +68,7 @@ function() {
     rename(`Notice To Appear/Own Recognizance` = `Notice To Appear/Own Recognizance (NTA-OR)`, `Expedited Removal` = `Expedited Removal (ER)`) |>
     select(Date, `Notice To Appear/Own Recognizance`, `Expedited Removal`, `Voluntary Return`, Other, ID)
   
-  old_data <- read_csv(file = "CBP Dispositions.csv")
+  old_data <- read_csv(file = "CBP Dispositions.csv") # contains data from 2022 that is no longer online
   
   bind_rows(old_data,
             anti_join(data, old_data, by = "ID")) |>
